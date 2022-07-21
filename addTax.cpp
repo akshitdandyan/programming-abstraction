@@ -8,3 +8,4 @@ int main() {
     cout << amount + tax;
     return 0;
 }
+
