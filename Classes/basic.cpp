@@ -17,8 +17,6 @@ public:
         cout << "Name: " << name << " Roll No: " << rollNo << " Standard: " << standard << endl;
     }
 
-
-
 };
 
 int main() {
