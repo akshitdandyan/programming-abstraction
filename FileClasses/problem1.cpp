@@ -15,7 +15,7 @@ public:
     void saveStudent() {
         ofstream myFile;
         myFile.open("students.txt", ios::app);
-        myFile << name << " " << id << " " << classGroup << endl;
+        myFile << id << " " << name << " " << classGroup << endl;
         myFile.close();
     }
 
@@ -24,20 +24,26 @@ public:
     }
 };
 
-// Student getStudentById(int id) {
-//     string line;
-//     ifstream studentDB("students.txt");
-//     if (studentDB.is_open()) {
-//         while (getline(studentDB, line)) {
-//             cout << "Student: " << line << endl;
+void getStudentById(int id) {
+    string line;
+    ifstream studentDB("students.txt");
 
-//         }
-//         studentDB.close();
-//     }
-//     else {
-//         cout << "No students data saved yet";
-//     }
-// }
+    if (studentDB.is_open()) {
+        while (getline(studentDB, line)) {
+
+            char _id = line.at(0);
+            if ((int)_id - 48 == id) {
+                cout << "FOUND: " << line << endl;
+                return;
+            }
+        }
+        cout << "NOT FOUND" << endl;
+        studentDB.close();
+    }
+    else {
+        cout << "No students data saved yet";
+    }
+}
 
 void printAllStudents() {
     string line;
@@ -54,27 +60,28 @@ void printAllStudents() {
 }
 
 int main() {
-    Student s1("Akshit", 1, "XII");
-    Student s2("Shanaya", 2, "XII");
-    Student s3("James", 3, "XI");
-    Student s4("Shagun", 4, "IX");
-    Student s5("Kevin", 5, "V");
+    // Student s1("Akshit", 1, "XII");
+    // Student s2("Shanaya", 2, "XII");
+    // Student s3("James", 3, "XI");
+    // Student s4("Shagun", 4, "IX");
+    // Student s5("Kevin", 5, "V");
 
-    int totalStudents;
-    cout << "Enter total students" << endl;
-    cin >> totalStudents;
+    // int totalStudents;
+    // cout << "Enter total students" << endl;
+    // cin >> totalStudents;
 
-    for (int i = 0; i < totalStudents;i++) {
-        cout << "Enter name, id & classgroup of student " << i + 1 << endl;
-        string name, classGroup;int id;
-        cin >> name;
-        cin >> id;
-        cin >> classGroup;
-        Student s(name, id, classGroup);
-        s.saveStudent();
-    }
+    // for (int i = 0; i < totalStudents;i++) {
+    //     cout << "Enter name, id & classgroup of student " << i + 1 << endl;
+    //     string name, classGroup;int id;
+    //     cin >> name;
+    //     cin >> id;
+    //     cin >> classGroup;
+    //     Student s(name, id, classGroup);
+    //     s.saveStudent();
+    // }
 
-    printAllStudents();
+    // printAllStudents();
+    getStudentById(2);
 
 
     return 0;
