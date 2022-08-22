@@ -42,7 +42,7 @@ int main() {
 
 
 
-    // store frequency of each element in a vector
+    // read frequency of each element via vectors
     cout << "Vector:" << endl;
     vector <int>::iterator it;
     for (it = v1.begin(); it != v1.end(); it++) {
