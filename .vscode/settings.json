@@ -6,6 +6,7 @@
         "fstream": "cpp",
         "*.tcc": "cpp",
         "iosfwd": "cpp",
-        "exception": "cpp"
+        "exception": "cpp",
+        "vector": "cpp"
     }
 }
