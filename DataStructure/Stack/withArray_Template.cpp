@@ -41,7 +41,6 @@ public:
     void display() {
         cout << "Stack: ";
         for (int i = top;i >= 0;i--) {
-
             cout << arr[i] << " ";
         }
         cout << endl << "Top: " << arr[top] << endl;
@@ -49,11 +48,9 @@ public:
 };
 
 int main() {
-
     int n;
     cin >> n;
     Stack <float> s(n);
-
     for (int i = 0;i < n;i++) {
         float element;
         cin >> element;
@@ -61,9 +58,7 @@ int main() {
     }
 
     s.display();
-
     s.pop();
-
     s.display();
 
     return 0;

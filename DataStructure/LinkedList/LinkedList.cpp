@@ -155,6 +155,29 @@ public:
             }
         }
     }
+
+    bool adjacentPair(int a, int b) {
+        Node* temp = head;
+        while (temp != NULL) {
+            if (temp->data == a && temp->next->data == b) {
+                return true;
+            }
+            temp = temp->next;
+        }
+        return false;
+    }
+
+    void deleteAtTail() {
+        if (head == NULL) {
+            cout << "Empty List" << endl;
+        }
+        else {
+            Node* temp = tail;
+            tail = tail->prev;
+            tail->next = NULL;
+            delete temp;
+        }
+    }
 };
 
 int main() {
