@@ -8,7 +8,6 @@ int main() {
     // myFile.open("myFile.cpp"); 
     // use ios::ate to append to the file
     myFile.open("myFile.txt", ios::app);
-
     myFile << "Hello World";
     myFile.close();
     return 0;
